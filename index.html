@@ -123,40 +123,6 @@
     <header class="article-header">
         
         <h1 itemprop="name">
-            <a href="/2019/07/30/数组-链表学习/">数组&amp;链表学习</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-07-30T09:32:54.000Z" itemprop="datePublished">2019-07-30</time>
-</a>
-
-            
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/algorithm/">algorithm</a>
-</div>
-
-
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        
-        
-    </section>
-</article>
-
-
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
             <a href="/2019/07/30/js学习笔记-一/">js学习笔记(一)</a>
         </h1>
         
@@ -180,48 +146,96 @@
     
     <section class="article-body markdown-body">
         
-        
-        
-    </section>
-</article>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>强制类型转换：将一个数据类型强制转换为其他的数据类型。</p>
+<p>类型转换主要指，将其他的数据类型，转换为：String、Number、Boolean。但一般不会把某个数据类型转换为null和underfine。</p>
+<h2 id="其他的简单类型-String"><a href="#其他的简单类型-String" class="headerlink" title="其他的简单类型  String"></a>其他的简单类型  String</h2><h3 id="方法一：变量-””-或者-变量-”abc”"><a href="#方法一：变量-””-或者-变量-”abc”" class="headerlink" title="方法一：变量+”” 或者 变量+”abc”"></a>方法一：变量+”” 或者 变量+”abc”</h3><p>举例如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vat a = <span class="number">123</span>;  <span class="comment">// Number 类型</span></span><br><span class="line"><span class="built_in">console</span>.log(a + <span class="string">''</span>);  <span class="comment">// 转换成 String 类型</span></span><br><span class="line"><span class="built_in">console</span>.log(a + <span class="string">'haha'</span>);  <span class="comment">// 转换成 String 类型</span></span><br></pre></td></tr></table></figure>
 
+<p>上面的例子中，打印的结果，都是字符串类型的数据。</p>
+<h3 id="方法二：调用toString-方法"><a href="#方法二：调用toString-方法" class="headerlink" title="方法二：调用toString()方法"></a>方法二：调用toString()方法</h3><p><strong>注意：null和undefined没有toString()方法，如果调用会出现报错</strong></p>
+<p>举例如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">变量.toString()</span><br></pre></td></tr></table></figure>
 
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            <a href="/2019/07/15/hello-world/">Hello World</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-07-15T11:22:51.899Z" itemprop="datePublished">2019-07-15</time>
-</a>
+<p>【重要】该方法<strong>不会影响到原变量</strong>，它会将转换的结果返回。当然我们还可以直接写成<code>a = a.toString()</code>，这样的话，就是直接修改原变量。</p>
+<p>  另外，Number类型的变量，在调用toString()时，可以在方法中传递一个整数作为参数。此时它将会把数字转换为指定的进制，如果不指定则默认转换为10进制。例如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">255</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//对于Number调用toString()时可以在方法中传递一个整数作为参数</span></span><br><span class="line"><span class="comment">//此时它将会把数字转换为指定的进制,如果不指定则默认转换为10进制</span></span><br><span class="line">a = a.toString(<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a);        <span class="comment">// 11111111</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a); <span class="comment">// string</span></span><br></pre></td></tr></table></figure>
 
-            
+<h3 id="方法三：使用String-函数"><a href="#方法三：使用String-函数" class="headerlink" title="方法三：使用String()函数"></a>方法三：使用String()函数</h3><p>格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String(变量)</span><br></pre></td></tr></table></figure>
 
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>使用String()函数做强制类型转换时：</p>
+<ul>
+<li>对于Number和Boolean而言，实际上就是调用toString()方法。</li>
+<li>但是对于null和undefined，就不会调用toString()方法。它会将 null 直接转换为 “null”。将 undefined 直接转换为 “undefined”。</li>
+</ul>
+<h3 id="prompt-：用户的输入"><a href="#prompt-：用户的输入" class="headerlink" title="prompt()：用户的输入"></a>prompt()：用户的输入</h3><p>我们在JS基础的第一篇里，就讲过，<code>prompt()</code>就是专门用来弹出能够让用户输入的对话框。重要的是：用户不管输入什么，都是字符串。</p>
+<h2 id="其他的数据类型-–-gt-Number"><a href="#其他的数据类型-–-gt-Number" class="headerlink" title="其他的数据类型 –&gt; Number"></a>其他的数据类型 –&gt; Number</h2><h3 id="方式一：使用Number-函数"><a href="#方式一：使用Number-函数" class="headerlink" title="方式一：使用Number()函数"></a>方式一：使用Number()函数</h3><p><strong>情况一：字符串 –&gt; 数字</strong></p>
+<ul>
+<li>1.如果字符串中是纯数字，则直接将其转换为数字。</li>
+<li>2.如果字符串中有非数字的内容，则转换为NaN。（此处可以看到Number()函数的局限性）</li>
+<li>3.如果字符串是一个空串或者是一个全是空格的字符串，则转换为0。</li>
+</ul>
+<p><strong>情况二：布尔 –&gt; 数字</strong></p>
+<ul>
+<li>true 转成 1</li>
+<li>false 转成 0</li>
+</ul>
+<p><strong>情况三：null –&gt; 数字</strong></p>
+<ul>
+<li>结果为：0</li>
+</ul>
+<p><strong>情况四：undefined –&gt; 数字</strong></p>
+<ul>
+<li>结果为：NaN</li>
+</ul>
+<h3 id="方式二：parseInt-：字符串-gt-整数【重要】"><a href="#方式二：parseInt-：字符串-gt-整数【重要】" class="headerlink" title="方式二：parseInt()：字符串 -&gt; 整数【重要】"></a>方式二：<code>parseInt()</code>：字符串 -&gt; 整数【重要】</h3><blockquote>
+<p><code>parseInt()</code>是专门用来对付字符串的。</p>
+</blockquote>
+<p><strong>parseInt()的作用是将字符串中的有效的整数内容转为数字</strong>。parse表示“转换”，Int表示“整数”（注意<code>Int</code>的拼写）。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parseInt(&quot;5&quot;);</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>得到的结果是数字5。</p>
+<p><strong>parseInt()还具有以下特性</strong>：</p>
+<p>（1）<strong>只保留字符串最开头的数字</strong>，后面的中文自动消失。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(parseInt(&quot;2019hello word&quot;));  //打印结果：2019</span><br><span class="line">console.log(parseInt(&quot;hello word 2019&quot;));  //打印结果：NaN</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>（2）自动带有截断小数的功能：<strong>取整，不四舍五入</strong>。</p>
+<p>例1：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="built_in">parseInt</span>(<span class="number">5.8</span>) + <span class="built_in">parseInt</span>(<span class="number">4.7</span>);</span><br><span class="line"><span class="built_in">console</span>.log(a)</span><br><span class="line"><span class="comment">//输出结果为 9</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>例2：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="built_in">parseInt</span>(<span class="number">5.8</span> + <span class="number">4.7</span>);</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br><span class="line"><span class="comment">//输出结果为 10</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<p>（3）如果对<strong>非String</strong>使用parseInt()或parseFloat()，它会<strong>先将其转换为String</strong>然后再操作。</p>
+<p>比如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="literal">true</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(a));  <span class="comment">//打印结果：NaN （因为是先将a转为字符串"true"，然后然后再操作）</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = <span class="literal">null</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(b));  <span class="comment">//打印结果：NaN  （因为是先将b转为字符串"null"，然后然后再操作）</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> c = <span class="literal">undefined</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(c));  <span class="comment">//打印结果：NaN  （因为是先将b转为字符串"undefined"，然后然后再操作）</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> d = <span class="number">204.11</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(d));  <span class="comment">//打印结果：204  （因为是先将c转为字符串"204.11"，然后然后再操作）</span></span><br></pre></td></tr></table></figure>
+
+<p>（4）带两个参数时，表示进制转换。</p>
+<h3 id="parseFloat-：字符串-–-gt-浮点数（小数）"><a href="#parseFloat-：字符串-–-gt-浮点数（小数）" class="headerlink" title="parseFloat()：字符串 –&gt; 浮点数（小数）"></a><code>parseFloat()</code>：字符串 –&gt; 浮点数（小数）</h3><blockquote>
+<p><code>parseFloat()</code>是专门用来对付字符串的。</p>
+</blockquote>
+<p>parseFloat()的作用是：将字符串转换为<strong>浮点数</strong>。</p>
+<p>parseFloat()和parseInt()的作用类似，不同的是，parseFloat()可以获得有效的小数部分。</p>
+<p>代码举例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">'123.456.789px'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">parseFloat</span>(a)); <span class="comment">// 打印结果：123.456</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="转换为Boolean"><a href="#转换为Boolean" class="headerlink" title="转换为Boolean"></a>转换为Boolean</h2><p>将其他的数据类型转换为Boolean，可以使用Boolean()函数。</p>
+<ul>
+<li>情况一：数字 –&gt; 布尔。除了0和NaN，其余的都是true。</li>
+<li>情况二：字符串 —&gt; 布尔。除了空串，其余的都是true。</li>
+<li>情况三：null和undefined都会转换为false。</li>
+<li>情况四：对象也会转换为true。</li>
+</ul>
+<p>PS：上面的这就种情况，很重要，开发中会经常用到。</p>
+<h2 id="其他进制的数字"><a href="#其他进制的数字" class="headerlink" title="其他进制的数字"></a>其他进制的数字</h2><ul>
+<li>16进制的数字，以<code>0x</code>开头</li>
+<li>8进制的数字，以<code>0</code>开头</li>
+<li>2进制的数字，<code>0b</code>开头（不是所有的浏览器都支持：chrome和火狐支持，IE不支持）</li>
+</ul>
+<p>比如<code>070</code>这个字符串，如果我调用parseInt()转成数字时，有些浏览器会当成8进制解析，有些会当成10进制解析。</p>
+<p>所以，比较建议的做法是：可以在parseInt()中传递第二个参数，来指定数字的进制。例如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">"070"</span>;</span><br><span class="line"></span><br><span class="line">a = <span class="built_in">parseInt</span>(a,<span class="number">10</span>); <span class="comment">//转换成十进制</span></span><br></pre></td></tr></table></figure>
+
 
         
     </section>
