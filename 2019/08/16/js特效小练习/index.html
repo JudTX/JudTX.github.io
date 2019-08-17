@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+
+    
+
+    
+
+    <title>js特效小练习 | Tx的博客</title>
+    <meta name="author" content="T x">
+    <meta name="version" content="1.0.0">
+    <meta name="keywords" content>
+    <meta name="description" content="点击隐藏​    效果图：思路分析获取点击元素绑定点击事件点击时，控制&amp;lt;div&amp;gt;的css样式切换,并同时改变按钮上的文字实现代码1234567891011121314151617181920212223242526272829303132333435363738394041424344454647&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&#34;en&#34;&amp;gt;&amp;lt;head&amp;gt;	&amp;lt;meta charset=&#34;UTF-8&#34;...">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+
+    
+    <link rel="alternate" href="/atom.xml" title="Tx的博客" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/images/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <main class="app">
+        <header class="header clearfix">
+    <div id="nav" class="nav">
+    <div class="nav-mobile">
+        <button id="open-panel" class="open-panel nav-mobile-item"><i class="icon-documents"></i></button>
+        <h1 class="nav-mobile-title nav-mobile-item">Tx的博客</h1>
+        <button id="open-menus" class="open-panel nav-mobile-item"><i class="icon-library"></i></button>
+    </div>
+
+    <nav id="nav-inner" class="nav-inner">
+        
+            <a class="nav-item" href="/">
+                <span class="nav-text">首页</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/front-end">
+                <span class="nav-text">前端</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/algorithm">
+                <span class="nav-text">算法</span>
+            </a>
+        
+            <a class="nav-item" href="/tags">
+                <span class="nav-text">标签</span>
+            </a>
+        
+            <a class="nav-item" href="/archives">
+                <span class="nav-text">归档</span>
+            </a>
+        
+            <a class="nav-item" href="/about">
+                <span class="nav-text">关于</span>
+            </a>
+        
+    </nav>
+</div>
+
+    <aside id="aside" class="aside">
+    <div id="aside-mask" class="aside-mask"></div>
+    <div id="aside-inner" class="aside-inner">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"><i class="icon-search-stroke"></i></button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+
+        
+        
+        
+        
+
+        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#点击隐藏"><span class="toc-number">1.</span> <span class="toc-text">点击隐藏</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#思路分析"><span class="toc-number">1.1.</span> <span class="toc-text">思路分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现代码"><span class="toc-number">1.2.</span> <span class="toc-text">实现代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#鼠标悬浮字体弹起"><span class="toc-number">2.</span> <span class="toc-text">鼠标悬浮字体弹起</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#效果图"><span class="toc-number">2.1.</span> <span class="toc-text">效果图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路分析-1"><span class="toc-number">2.2.</span> <span class="toc-text">思路分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现代码-1"><span class="toc-number">2.3.</span> <span class="toc-text">实现代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">3.</span> <span class="toc-text">总结</span></a></li></ol>
+        
+    </div>
+</aside>
+
+</header>
+
+        <div id="content" class="content"><article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            js特效小练习
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/2019/08/16/js特效小练习/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-08-16T07:16:55.000Z" itemprop="datePublished">2019-08-16</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/JavaScript/">JavaScript</a>, <a class="article-tag-link" href="/tags/css/">css</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h2 id="点击隐藏"><a href="#点击隐藏" class="headerlink" title="点击隐藏"></a>点击隐藏</h2><p>​    效果图：</p>
+<p><img src="http://39.106.112.168/image/%E7%82%B9%E5%87%BB.gif" alt></p>
+<h3 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h3><ol>
+<li><p>获取点击元素</p>
+</li>
+<li><p>绑定点击事件</p>
+</li>
+<li><p>点击时，控制<code>&lt;div&gt;</code>的css样式切换,并同时改变按钮上的文字</p>
+<a id="more"></a>
+
+</li>
+</ol>
+<h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line">		#box&#123;</span><br><span class="line">			width: 150px;</span><br><span class="line">			height: 150px;</span><br><span class="line">			background-color: red;</span><br><span class="line">		&#125;</span><br><span class="line">		.show &#123;</span><br><span class="line">			display: block;</span><br><span class="line">		&#125;</span><br><span class="line">		.hidden &#123;</span><br><span class="line">			display: none;</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">id</span>=<span class="string">"btn"</span> <span class="attr">value</span>=<span class="string">"隐藏"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box"</span> <span class="attr">class</span>=<span class="string">"show"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="javascript">		<span class="comment">// 获取元素</span></span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">'btn'</span>);</span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> flage = <span class="number">1</span>;</span></span><br><span class="line"><span class="javascript">		btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">			<span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">'box'</span>);</span></span><br><span class="line"><span class="javascript">			<span class="keyword">if</span> (flage === <span class="number">1</span>) &#123;</span></span><br><span class="line"><span class="javascript">				<span class="comment">// 注册按钮事件</span></span></span><br><span class="line"><span class="javascript">					<span class="comment">// 控制div隐藏</span></span></span><br><span class="line"><span class="javascript">					box.className = <span class="string">'hidden'</span>;</span></span><br><span class="line"><span class="javascript">					<span class="comment">// 改变按钮文字</span></span></span><br><span class="line"><span class="javascript">					btn.value = <span class="string">'显示'</span>;</span></span><br><span class="line">					flage = 0;</span><br><span class="line"><span class="javascript">			&#125;<span class="keyword">else</span> <span class="keyword">if</span> (flage === <span class="number">0</span>) &#123;</span></span><br><span class="line"><span class="javascript">					box.className = <span class="string">'show'</span>;</span></span><br><span class="line"><span class="javascript">					<span class="comment">// 改变按钮文字</span></span></span><br><span class="line"><span class="javascript">					btn.value = <span class="string">'隐藏'</span>;</span></span><br><span class="line">					flage = 1;</span><br><span class="line">			&#125;	</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="鼠标悬浮字体弹起"><a href="#鼠标悬浮字体弹起" class="headerlink" title="鼠标悬浮字体弹起"></a>鼠标悬浮字体弹起</h2><p>​        其实感觉这个特效更倾向于css的动画效果。其实主要是学习了es6来试验一下es6的一些新特性。</p>
+<h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><p><img src="http://39.106.112.168/image/%E5%BC%B9%E5%87%BA.gif" alt></p>
+<h3 id="思路分析-1"><a href="#思路分析-1" class="headerlink" title="思路分析"></a>思路分析</h3><pre><code>1. 获取元素
+  2. 获取到元素中的内容
+  3. 把内容的每一个字母套上`&lt;span&gt;`标签
+  4. 使用css控制每一个`&lt;span&gt;`的效果</code></pre><h3 id="实现代码-1"><a href="#实现代码-1" class="headerlink" title="实现代码"></a>实现代码</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">        *&#123;</span><br><span class="line">            margin: 0;</span><br><span class="line">            padding: 0;</span><br><span class="line">        &#125;</span><br><span class="line">        h2&#123;</span><br><span class="line">            height: 100vh;</span><br><span class="line">            width: 100vw;</span><br><span class="line">            background-color: #ffbf01;</span><br><span class="line">            position: absolute;</span><br><span class="line">            display: flex;</span><br><span class="line">            justify-content: center;</span><br><span class="line">            align-items: center;</span><br><span class="line">            font-size: 50px;</span><br><span class="line">            font-family: sans-serif;</span><br><span class="line">            color: white;</span><br><span class="line">            text-shadow: 3px 3px  0 rgba(0,0,0,0.2);</span><br><span class="line">        &#125;</span><br><span class="line">        .heading span&#123;</span><br><span class="line">            cursor: pointer;</span><br><span class="line">            display: inline-block;</span><br><span class="line">            margin-left: 10px;</span><br><span class="line">            transition: transform .25s;</span><br><span class="line">        &#125;</span><br><span class="line">        .heading span:hover&#123;</span><br><span class="line">            transform: translateY(-20px) rotate(10deg) scale(2);</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span> <span class="attr">class</span>=<span class="string">"heading"</span>&gt;</span>Welcome!<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> heading = <span class="built_in">document</span>.querySelector(<span class="string">".heading"</span>);<span class="comment">//获取元素</span></span></span><br><span class="line">        heading.innerHTML = wrapWithSpan(heading.textContent);</span><br><span class="line"></span><br><span class="line"><span class="javascript">        <span class="function"><span class="keyword">function</span> <span class="title">wrapWithSpan</span>(<span class="params">word</span>)</span>&#123;<span class="comment">//使用扩展运算符和字符串模板给每一个字母套上一对&lt;span&gt;标签</span></span></span><br><span class="line"><span class="javascript">            <span class="keyword">return</span> [...word].map(<span class="function"><span class="params">letter</span> =&gt;</span> <span class="string">`&lt;span&gt;<span class="subst">$&#123;letter&#125;</span>&lt;/span&gt;`</span>).join(<span class="string">''</span>);<span class="comment">//使用join去掉","</span></span></span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>具体效果可以访问<a href="http://39.106.112.168/jump" target="_blank" rel="noopener">弹出特效</a>来查看！！</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>​        通过写这些小特效，我还收获了一个有关css单位的小知识点。在这里记录一下。</p>
+<ol>
+<li><p>px：绝对单位，页面按精确像素展示(平时常用)</p>
+</li>
+<li><p>em：相对单位，基准点为父节点字体的大小，如果自身定义了font-size按自身来计算（浏览器默认字体是16px），整个页面内1em不是一个固定的值</p>
+</li>
+<li><p>rem：相对单位，可理解为”root em”, 相对根节点html的字体大小来计算，CSS3新加属性，chrome/firefox/IE9+支持。</p>
+</li>
+<li><p>vw：viewpoint width，视窗宽度，1vw等于视窗宽度的1%。</p>
+</li>
+<li><p>vh：viewpoint height，视窗高度，1vh等于视窗高度的1%。(当height: 100vh时 则当前的对象占满整个浏览器的高度)</p>
+<p>其中<strong>vh</strong> 解决了困扰我多时的问题：一些网页是如何分成像一页一页的，且每一页都占满整个浏览器页面的。</p>
+</li>
+</ol>
+
+        
+    </section>
+</article>
+
+
+
+</div>
+        <footer class="footer">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme by <a href="https://github.com/sanonz/hexo-theme-concise" target="_blank">Concise</a>
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?e4027971a230b210f4671f485b33846a";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    
+</footer>
+
+    </main>
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var nodes = {
+            nav: $('#nav'),
+            aside: $('#aside'),
+            asideInner: $('#aside-inner'),
+            navInner: $('#nav-inner')
+        };
+
+        var doing = false;
+        nodes.asideInner.on('webkitAnimationEnd mozAnimationEnd oAnimationEnd oanimationend animationend', function() {
+            if (nodes.aside.hasClass('mobile-open')) {
+                nodes.aside.removeClass('mobile-open');
+            } else {
+                nodes.aside.removeClass('mobile-close panel-show');
+            }
+            doing = false;
+        });
+        $('#open-panel, #aside-mask').on('click', function() {
+            if (doing) {
+                return;
+            }
+            
+            if (nodes.aside.hasClass('panel-show')) {
+                nodes.aside.addClass('mobile-close');
+            } else {
+                nodes.aside.addClass('mobile-open panel-show');
+            }
+        });
+        $('#open-menus').on('click', function() {
+            nodes.navInner.slideToggle();
+        });
+
+        if (window.innerWidth <= 960) {
+            setTimeout(function() {
+                nodes.navInner.slideUp();
+            }, 3000);
+        }
+    });
+    </script>
+    
+        <script type="text/javascript" src="/js/scrollspy.min.js"></script>
+        <script type="text/javascript">
+        $(document.body).scrollspy({target: '#aside-inner'});
+        </script>
+    
+
+</body>
+</html>
