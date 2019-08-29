@@ -11,7 +11,7 @@
     <meta name="author" content="T x">
     <meta name="version" content="1.0.0">
     <meta name="keywords" content>
-    <meta name="description" content="拖拽​        最近学习es6的同时，学习到继承相关知识，就利用新知识和原先写过的js特效结合，实现一下拖拽效果。​        效果描述: 有两个div，div1和div2，其中div1可以不受边界限制自由拖拽，而div2继承div1拖拽效果的同时，加上了上边界和左边界的限制(不能超出上和左边界)。效果演示思路解析获取盒子的id，并注册监听事件当鼠标刚刚点击时，记录鼠标点击位置距离盒子左边界和上边界距离当鼠标移动时，更改盒子的top和left属性为 当前鼠标距离 - ...">
+    <meta name="description" content="拖拽​        最近学习es6的同时，学习到继承相关知识，就利用新知识和原先写过的js特效结合，实现一下拖拽效果。​        效果描述: 有两个div，div1和div2，其中div1可以不受边界限制自由拖拽，而div2继承div1拖拽效果的同时，加上了上边界和左边界的限制(不能超出上和左边界)。效果演示思路解析获取盒子的id，并注册监听事件当鼠标刚刚点击时，记录鼠标点击位置距离盒子左边界和上边界距离当鼠标移动时，更改盒子的top和left属性为 当前鼠标距离 ...">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
 
@@ -113,6 +113,8 @@
         <h2 id="拖拽"><a href="#拖拽" class="headerlink" title="拖拽"></a>拖拽</h2><p>​        最近学习es6的同时，学习到继承相关知识，就利用新知识和原先写过的js特效结合，实现一下拖拽效果。</p>
 <p>​        <strong>效果描述:</strong> 有两个div，div1和div2，其中div1可以不受边界限制自由拖拽，而div2继承div1拖拽效果的同时，加上了上边界和左边界的限制(不能超出上和左边界)。</p>
 <h3 id="效果演示"><a href="#效果演示" class="headerlink" title="效果演示"></a>效果演示</h3><p><img src="http://39.106.112.168/image/%E6%8B%96%E6%8B%BD.gif" alt></p>
+<a id="more"></a>
+
 <h3 id="思路解析"><a href="#思路解析" class="headerlink" title="思路解析"></a>思路解析</h3><ol>
 <li>获取盒子的id，并注册监听事件</li>
 <li>当鼠标刚刚点击时，记录鼠标点击位置距离盒子左边界和上边界距离</li>
