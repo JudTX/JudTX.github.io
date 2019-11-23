@@ -7,7 +7,7 @@
 
     
 
-    <title>Tag: Css | Tx的博客</title>
+    <title>Tag: css | Tx的博客</title>
     <meta name="author" content="T x">
     <meta name="version" content="1.0.0">
     <meta name="keywords" content>
@@ -121,8 +121,8 @@
 
 
 <div class="page-hd">
-    Css
-    <small>(2)</small>
+    css
+    <small>(1)</small>
 </div>
 
 
@@ -146,32 +146,11 @@
 <article class="archive-article archive-type-post">
     <div class="archive-article-inner">
         <header class="archive-article-header">
-            <a class="archive-article-link" href="/2019/10/19/less学习小结/">less学习小结</a>
-            <span class="archive-article-date">
-                (<a class="article-date" href="/archives/2019/10">
-    
-    <time datetime="2019-10-19T08:51:42.000Z" itemprop="datePublished">10/19</time>
-</a>
-)
-            </span>
-        </header>
-    </div>
-</article>
-    </li>
-
-    
-    
-
-    <li class="archive-section-item">
-        
-<article class="archive-article archive-type-post">
-    <div class="archive-article-inner">
-        <header class="archive-article-header">
-            <a class="archive-article-link" href="/2019/08/10/Css练习-B站头部仿写/">Css练习-B站头部仿写</a>
+            <a class="archive-article-link" href="/2019/08/16/js特效小练习/">js特效小练习</a>
             <span class="archive-article-date">
                 (<a class="article-date" href="/archives/2019/08">
     
-    <time datetime="2019-08-10T02:24:35.000Z" itemprop="datePublished">8/10</time>
+    <time datetime="2019-08-16T07:16:55.000Z" itemprop="datePublished">8/16</time>
 </a>
 )
             </span>
@@ -225,6 +204,32 @@
             doing = false;
         });
         $('#open-panel, #aside-mask').on('click', function() {
+            if (doing) {
+                return;
+            }
+            
+            if (nodes.aside.hasClass('panel-show')) {
+                nodes.aside.addClass('mobile-close');
+            } else {
+                nodes.aside.addClass('mobile-open panel-show');
+            }
+        });
+        $('#open-menus').on('click', function() {
+            nodes.navInner.slideToggle();
+        });
+
+        if (window.innerWidth <= 960) {
+            setTimeout(function() {
+                nodes.navInner.slideUp();
+            }, 3000);
+        }
+    });
+    </script>
+    
+
+</body>
+</html>
+n() {
             if (doing) {
                 return;
             }
