@@ -123,6 +123,58 @@
     <header class="article-header">
         
         <h1 itemprop="name">
+            <a href="/2019/10/19/less学习小结/">less学习小结</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/categories/front-end/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-10-19T08:51:42.000Z" itemprop="datePublished">2019-10-19</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/Css/">Css</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>​    在less中编译会出现的注释方法：    </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/* 这是注释 */</span><br></pre></td></tr></table></figure>
+
+<p>​    在less中编译不会出现的注释方法：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//这是注释</span><br></pre></td></tr></table></figure>
+
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>​    变量的定义方法：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> @变量名: 变量值;</span><br><span class="line"><span class="comment">//变量的使用：</span></span><br><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: @变量名;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="混入"><a href="#混入" class="headerlink" title="混入"></a>混入</h2><p>​    混入：可以将一个定义好的样式引入另一个样式中，类似函数的调用.</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//实现圆角功能</span></span><br><span class="line"><span class="selector-class">.addRadius</span>(<span class="variable">@r</span>:<span class="number">10px</span>)&#123; <span class="comment">//传入一个值，若没有传入则使用默认值10px</span></span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="variable">@r</span>;</span><br><span class="line">    <span class="attribute">-webkit-border-radius</span>: <span class="variable">@r</span>;</span><br><span class="line">    <span class="attribute">-moz-border-radius</span>: <span class="variable">@r</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//给不同标签添加圆角样式</span></span><br><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="selector-class">.addRadius</span>(<span class="number">5px</span>);<span class="comment">//直接使用并传值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="嵌套"><a href="#嵌套" class="headerlink" title="嵌套"></a>嵌套</h2><p>实现选择器的继承，可以减少代码量，同时使代码结构更加清晰</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">//一般我们写css使会这样</span><br><span class="line"><span class="selector-class">.xx_header</span>&#123;</span><br><span class="line">    xxxx;</span><br><span class="line">    <span class="selector-tag">xxx</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.xx_header</span> &gt; <span class="selector-tag">div</span>&#123;</span><br><span class="line">    xxx;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.xx_header</span> &gt; <span class="selector-tag">div</span> &gt; <span class="selector-tag">h3</span>&#123;</span><br><span class="line">    xxx;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.xx_header</span> &gt; <span class="selector-tag">div</span> &gt; <span class="selector-tag">a</span><span class="selector-pseudo">::berfore</span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.xx_header</span> &gt; <span class="selector-tag">div</span> &gt; <span class="selector-tag">a</span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.xx_header</span> &gt; <span class="selector-tag">div</span> &gt;<span class="selector-tag">a</span><span class="selector-pseudo">:hover</span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>less写法：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.xx_header</span>&#123;</span><br><span class="line">    <span class="selector-tag">xxxx</span>;</span><br><span class="line">    <span class="selector-tag">xxxx</span>;</span><br><span class="line">    &gt; <span class="selector-tag">div</span>&#123;<span class="comment">//可以直接在父元素中</span></span><br><span class="line">        &gt; <span class="selector-tag">h3</span>&#123;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-tag">&amp;</span><span class="selector-pseudo">::before</span>&#123; <span class="comment">// a::before 的写法</span></span><br><span class="line">            <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        &gt; <span class="selector-tag">a</span>&#123;</span><br><span class="line">            <span class="selector-tag">&amp;</span><span class="selector-pseudo">:hover</span>&#123; <span class="comment">//a:hover的写法</span></span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
             <a href="/2019/08/21/js特效-拖拽/">js特效-拖拽</a>
         </h1>
         
@@ -526,50 +578,11 @@
 </article>
 
 
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            <a href="/2019/07/30/js学习笔记-一/">js学习笔记(一)</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/categories/front-end/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-07-30T08:26:58.000Z" itemprop="datePublished">2019-07-30</time>
-</a>
-
-            
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/JavaScript/">JavaScript</a>, <a class="article-tag-link" href="/tags/学习笔记/">学习笔记</a>
-</div>
 
 
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>强制类型转换：将一个数据类型强制转换为其他的数据类型。</p>
-<p>类型转换主要指，将其他的数据类型，转换为：String、Number、Boolean。但一般不会把某个数据类型转换为null和underfine。</p>
-        
-        <p class="article-more-link">
-            <a href="/2019/07/30/js学习笔记-一/#more">
-                <span class="vm">阅读更多</span>
-                <i class="icon-arrow-double-right vm"></i>    
-            </a>
-        </p>
-        
-        
-    </section>
-</article>
-
-
-
+<nav class="page-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/categories/front-end/page/2/">2</a><a class="extend next" rel="next" href="/categories/front-end/page/2/">Next &raquo;</a>
+</nav>
 
 
 </div>
