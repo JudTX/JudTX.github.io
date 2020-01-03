@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+
+    
+
+    
+
+    <title>js学习笔记(二) | Tx的博客</title>
+    <meta name="author" content="T x">
+    <meta name="version" content="1.0.0">
+    <meta name="keywords" content>
+    <meta name="description" content="函数的介绍函数：就是将一些功能或语句进行封装，在需要的时候，通过调用的形式，执行这些语句。函数也是一个对象使用typeof检查一个函数对象时，会返回function函数的作用：将大量重复的语句写在函数里，以后需要这些语句的时候，可以直接调用函数，避免重复劳动。简化编程，让编程模块化。来看个例子：12345678console.log(&#34;你好&#34;);sayHello();	// 调用函数// 定义函数function sayHello()&amp;#123;	consol...">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+
+    
+    <link rel="alternate" href="/atom.xml" title="Tx的博客" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/images/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <main class="app">
+        <header class="header clearfix">
+    <div id="nav" class="nav">
+    <div class="nav-mobile">
+        <button id="open-panel" class="open-panel nav-mobile-item"><i class="icon-documents"></i></button>
+        <h1 class="nav-mobile-title nav-mobile-item">Tx的博客</h1>
+        <button id="open-menus" class="open-panel nav-mobile-item"><i class="icon-library"></i></button>
+    </div>
+
+    <nav id="nav-inner" class="nav-inner">
+        
+            <a class="nav-item" href="/">
+                <span class="nav-text">首页</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/front-end">
+                <span class="nav-text">前端</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/algorithm">
+                <span class="nav-text">算法</span>
+            </a>
+        
+            <a class="nav-item" href="/tags">
+                <span class="nav-text">标签</span>
+            </a>
+        
+            <a class="nav-item" href="/archives">
+                <span class="nav-text">归档</span>
+            </a>
+        
+            <a class="nav-item" href="/about">
+                <span class="nav-text">关于</span>
+            </a>
+        
+    </nav>
+</div>
+
+    <aside id="aside" class="aside">
+    <div id="aside-mask" class="aside-mask"></div>
+    <div id="aside-inner" class="aside-inner">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"><i class="icon-search-stroke"></i></button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+
+        
+        
+        
+        
+
+        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#函数的介绍"><span class="toc-number">1.</span> <span class="toc-text">函数的介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数的定义和调用"><span class="toc-number">2.</span> <span class="toc-text">函数的定义和调用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一步：函数的定义"><span class="toc-number">2.1.</span> <span class="toc-text">第一步：函数的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二步：函数的调用"><span class="toc-number">2.2.</span> <span class="toc-text">第二步：函数的调用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数的参数：形参和实参"><span class="toc-number">3.</span> <span class="toc-text">函数的参数：形参和实参</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数的参数：形参和实参-1"><span class="toc-number">4.</span> <span class="toc-text">函数的参数：形参和实参</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数的返回值"><span class="toc-number">5.</span> <span class="toc-text">函数的返回值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数名、函数体和函数加载问题"><span class="toc-number">6.</span> <span class="toc-text">函数名、函数体和函数加载问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fn-和-fn-的区别"><span class="toc-number">7.</span> <span class="toc-text">fn()  和 fn 的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#立即执行函数"><span class="toc-number">8.</span> <span class="toc-text">立即执行函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法"><span class="toc-number">9.</span> <span class="toc-text">方法</span></a></li></ol>
+        
+    </div>
+</aside>
+
+</header>
+
+        <div id="content" class="content"><article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            js学习笔记(二)
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/2019/06/03/js学习笔记-二/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-06-03T03:01:27.000Z" itemprop="datePublished">2019-06-03</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/JavaScript/">JavaScript</a>, <a class="article-tag-link" href="/tags/学习笔记/">学习笔记</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h2 id="函数的介绍"><a href="#函数的介绍" class="headerlink" title="函数的介绍"></a>函数的介绍</h2><p>函数：就是将一些功能或语句进行<strong>封装</strong>，在需要的时候，通过<strong>调用</strong>的形式，执行这些语句。</p>
+<ul>
+<li><strong>函数也是一个对象</strong></li>
+<li>使用<code>typeof</code>检查一个函数对象时，会返回function</li>
+</ul>
+<p><strong>函数的作用</strong>：</p>
+<ul>
+<li><p>将大量重复的语句写在函数里，以后需要这些语句的时候，可以直接调用函数，避免重复劳动。</p>
+</li>
+<li><p>简化编程，让编程模块化。</p>
+<a id="more"></a>
+
+</li>
+</ul>
+<p>来看个例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"你好"</span>);</span><br><span class="line">sayHello();	<span class="comment">// 调用函数</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"欢迎"</span>);</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"welcome"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="函数的定义和调用"><a href="#函数的定义和调用" class="headerlink" title="函数的定义和调用"></a>函数的定义和调用</h2><h3 id="第一步：函数的定义"><a href="#第一步：函数的定义" class="headerlink" title="第一步：函数的定义"></a>第一步：函数的定义</h3><p><strong>方式一</strong>：使用<code>函数声明</code>来创建一个函数。语法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> 函数名(<span class="params">[形参<span class="number">1</span>,形参<span class="number">2.</span>..形参N]</span>)</span>&#123;  <span class="comment">// 备注：语法中的中括号，表示“可选”</span></span><br><span class="line">	语句...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>举例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a, b</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a+b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>解释如下：</p>
+<ul>
+<li>function：是一个关键字。中文是“函数”、“功能”。</li>
+<li>函数名字：命名规定和变量的命名规定一样。只能是字母、数字、下划线、美元符号，不能以数字开头。</li>
+<li>参数：可选。</li>
+<li>大括号里面，是这个函数的语句。</li>
+</ul>
+<p>PS：在有些编辑器中，方法写完之后，我们在方法的前面输入<code>/**</code>，然后回车，会发现，注释的格式会自动补齐。</p>
+<p><strong>方式二</strong>：使用<code>函数表达式</code>来创建一个函数。语法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> 函数名  = <span class="function"><span class="keyword">function</span>(<span class="params">[形参<span class="number">1</span>,形参<span class="number">2.</span>..形参N]</span>)</span>&#123;</span><br><span class="line">	语句....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>举例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fun3 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"我是匿名函数中封装的代码"</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>从方式二的举例中可以看出：所谓的“函数表达式”，其实就是将匿名函数赋值给一个变量。</p>
+<p>当然，我们还有方式三：使用构造函数来创建一个对象。这种方式，用的少。</p>
+<h3 id="第二步：函数的调用"><a href="#第二步：函数的调用" class="headerlink" title="第二步：函数的调用"></a>第二步：函数的调用</h3><p>函数调用的语法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">函数名字(参数);<span class="comment">//其中参数并不是必须的</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="函数的参数：形参和实参"><a href="#函数的参数：形参和实参" class="headerlink" title="函数的参数：形参和实参"></a>函数的参数：形参和实参</h2><p>函数的参数包括形参和实参。例如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello</span>(<span class="params">a,b</span>)</span>&#123;<span class="comment">//定义函数，其中sayHello是函数名，a和b是函数调用时输入的参数(即形参)</span></span><br><span class="line">       <span class="built_in">console</span>.log(a);</span><br><span class="line">       <span class="built_in">console</span>.log(b);</span><br><span class="line">   &#125;</span><br><span class="line">sayHello(<span class="number">5</span>,<span class="number">6</span>);<span class="comment">//调用函数，其中5,6分别对应a，b(即实参)</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：实际参数和形式参数的个数，要相同。</p>
+<p>举例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sum(<span class="number">3</span>,<span class="number">4</span>);</span><br><span class="line">sum(<span class="string">"3"</span>,<span class="number">4</span>);</span><br><span class="line">sum(<span class="string">"Hello"</span>,<span class="string">"World"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//函数：求和</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(a + b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>控制台输出结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">7</span><br><span class="line">34</span><br><span class="line">helloworld</span><br></pre></td></tr></table></figure>
+
+<h2 id="函数的参数：形参和实参-1"><a href="#函数的参数：形参和实参-1" class="headerlink" title="函数的参数：形参和实参"></a>函数的参数：形参和实参</h2><p>假设我们定义一个求和的函数。</p>
+<p><strong>形参：</strong></p>
+<ul>
+<li>可以在函数的<code>()</code>中来指定一个或多个形参。</li>
+<li>多个形参之间使用<code>,</code>隔开，声明形参就相当于在函数内部声明了对应的变量，但是并不赋值。</li>
+</ul>
+<p><strong>实参</strong>：</p>
+<ul>
+<li>在调用函数时，可以在 <code>()</code>中指定实参。</li>
+<li>实参将会赋值给函数中对应的形参。</li>
+</ul>
+<p>举例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 调用函数</span></span><br><span class="line">sum(<span class="number">3</span>,<span class="number">4</span>);</span><br><span class="line">sum(<span class="string">"3"</span>,<span class="number">4</span>);</span><br><span class="line">sum(<span class="string">"Hello"</span>,<span class="string">"World"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义函数：求和</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(a + b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>控制台输出结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">7</span><br><span class="line">34</span><br><span class="line">helloworld</span><br></pre></td></tr></table></figure>
+
+<p><strong>实参的类型：</strong></p>
+<p>函数的实参可以是任意的数据类型。</p>
+<p>调用函数时解析器不会检查实参的类型，所以要注意，是否有可能会接收到非法的参数，如果有可能则需要对参数进行类型的检查。</p>
+<p><strong>实参的数量：</strong></p>
+<p>调用函数时，解析器也不会检查实参的数量：</p>
+<ul>
+<li>多余实参不会被赋值</li>
+<li>如果实参的数量少于形参的数量，则没有对应实参的形参将是undefined。例如：</li>
+</ul>
+<p><img src="http://39.106.112.168/image/%E5%87%BD%E6%95%B0.PNG" alt></p>
+<h2 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h2><p>举例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(sum(<span class="number">3</span>, <span class="number">4</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">//函数：求和</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>return的作用是结束方法。</p>
+<p>注意：</p>
+<ul>
+<li>return后的值将会作为函数的执行结果返回，可以定义一个变量，来接收该结果。</li>
+<li>在函数中return后的语句都不会执行（函数在执行完 return 语句之后停止并立即退出）</li>
+<li>如果return语句后不跟任何值，就相当于返回一个undefined</li>
+<li>如果函数中不写return，则也会返回undefined</li>
+<li>返回值可以是任意的数据类型，可以是对象，也可以是函数。</li>
+</ul>
+<h2 id="函数名、函数体和函数加载问题"><a href="#函数名、函数体和函数加载问题" class="headerlink" title="函数名、函数体和函数加载问题"></a>函数名、函数体和函数加载问题</h2><p>我们要记住：<strong>函数名 == 整个函数</strong>。举例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(fn) == <span class="built_in">console</span>.log(<span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;alert(<span class="number">1</span>)&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//定义fn方法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="number">1</span>)</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>我们知道，当我们在调用一个函数时，通常使用<code>函数()</code>这种格式；但此时，我们是直接使用<code>函数</code>这种格式，它的作用相当于整个函数。</p>
+<p><strong>函数的加载问题</strong>：JS加载的时候，只加载函数名，不加载函数体。所以如果想使用内部的成员变量，需要调用函数。</p>
+<h2 id="fn-和-fn-的区别"><a href="#fn-和-fn-的区别" class="headerlink" title="fn()  和 fn 的区别"></a>fn()  和 fn 的区别</h2><ul>
+<li><code>fn()</code>：调用函数。相当于获取了函数的返回值。</li>
+<li><code>fn</code>：函数对象。相当于直接获取了函数对象。</li>
+</ul>
+<h2 id="立即执行函数"><a href="#立即执行函数" class="headerlink" title="立即执行函数"></a>立即执行函数</h2><p>现有匿名函数如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"a = "</span> + a);</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"b = "</span> + b);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>立即执行函数如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"a = "</span> + a);</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"b = "</span> + b);</span><br><span class="line">&#125;)(<span class="number">123</span>, <span class="number">456</span>);</span><br></pre></td></tr></table></figure>
+
+<p>立即执行函数：函数定义完，立即被调用，这种函数叫做立即执行函数。</p>
+<p>立即执行函数往往只会执行一次。为什么呢？因为没有变量保存它，执行完了之后，就找不到它了。</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>函数也可以称为对象的属性。<strong>如果一个函数作为一个对象的属性保存，那么我们称这个函数是这个对象的方法</strong>。</p>
+<p>调用这个函数就说调用对象的方法（method）。相比于方法，它只是名称上的区别，并没有其他的区别。</p>
+<p>函数举例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 调用函数</span></span><br><span class="line">fn();</span><br></pre></td></tr></table></figure>
+
+<p>方法举例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 调用方法</span></span><br><span class="line">obj.fn();</span><br></pre></td></tr></table></figure>
+
+<p>我们可以这样说，如果直接是<code>fn()</code>，那就说明是函数调用。如果是发现<code>XX.fn()</code>的这种形式，那就说明是<strong>方法</strong>调用。</p>
+
+        
+    </section>
+</article>
+
+
+
+</div>
+        <footer class="footer">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme by <a href="https://github.com/sanonz/hexo-theme-concise" target="_blank">Concise</a>
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?e4027971a230b210f4671f485b33846a";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    
+</footer>
+
+    </main>
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var nodes = {
+            nav: $('#nav'),
+            aside: $('#aside'),
+            asideInner: $('#aside-inner'),
+            navInner: $('#nav-inner')
+        };
+
+        var doing = false;
+        nodes.asideInner.on('webkitAnimationEnd mozAnimationEnd oAnimationEnd oanimationend animationend', function() {
+            if (nodes.aside.hasClass('mobile-open')) {
+                nodes.aside.removeClass('mobile-open');
+            } else {
+                nodes.aside.removeClass('mobile-close panel-show');
+            }
+            doing = false;
+        });
+        $('#open-panel, #aside-mask').on('click', function() {
+            if (doing) {
+                return;
+            }
+            
+            if (nodes.aside.hasClass('panel-show')) {
+                nodes.aside.addClass('mobile-close');
+            } else {
+                nodes.aside.addClass('mobile-open panel-show');
+            }
+        });
+        $('#open-menus').on('click', function() {
+            nodes.navInner.slideToggle();
+        });
+
+        if (window.innerWidth <= 960) {
+            setTimeout(function() {
+                nodes.navInner.slideUp();
+            }, 3000);
+        }
+    });
+    </script>
+    
+        <script type="text/javascript" src="/js/scrollspy.min.js"></script>
+        <script type="text/javascript">
+        $(document.body).scrollspy({target: '#aside-inner'});
+        </script>
+    
+
+</body>
+</html>

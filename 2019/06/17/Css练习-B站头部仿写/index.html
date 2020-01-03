@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+
+    
+
+    
+
+    <title>Css练习-B站头部仿写 | Tx的博客</title>
+    <meta name="author" content="T x">
+    <meta name="version" content="1.0.0">
+    <meta name="keywords" content>
+    <meta name="description" content="前言​        最近好不容易学习完JavaScript，但是感觉自己的html和css生疏了很多，所以仿写B站的头部练习一下。废话不多说，让我们直接开始仿写的准备工作吧。准备工作​        首先，来分析一下B站头部的布局,由图中红线可以看出，我给头部的划分，不过通过分析源码和原页面布局我发现我和b站程序员大佬的划分还是有一定差别的,既然划分完部分接下来就是写代码的过程了。​        新建工程，并按照上面的划分，进行布局：​        同时，观察可以发现，B站...">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+
+    
+    <link rel="alternate" href="/atom.xml" title="Tx的博客" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/images/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <main class="app">
+        <header class="header clearfix">
+    <div id="nav" class="nav">
+    <div class="nav-mobile">
+        <button id="open-panel" class="open-panel nav-mobile-item"><i class="icon-documents"></i></button>
+        <h1 class="nav-mobile-title nav-mobile-item">Tx的博客</h1>
+        <button id="open-menus" class="open-panel nav-mobile-item"><i class="icon-library"></i></button>
+    </div>
+
+    <nav id="nav-inner" class="nav-inner">
+        
+            <a class="nav-item" href="/">
+                <span class="nav-text">首页</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/front-end">
+                <span class="nav-text">前端</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/algorithm">
+                <span class="nav-text">算法</span>
+            </a>
+        
+            <a class="nav-item" href="/tags">
+                <span class="nav-text">标签</span>
+            </a>
+        
+            <a class="nav-item" href="/archives">
+                <span class="nav-text">归档</span>
+            </a>
+        
+            <a class="nav-item" href="/about">
+                <span class="nav-text">关于</span>
+            </a>
+        
+    </nav>
+</div>
+
+    <aside id="aside" class="aside">
+    <div id="aside-mask" class="aside-mask"></div>
+    <div id="aside-inner" class="aside-inner">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"><i class="icon-search-stroke"></i></button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+
+        
+        
+        
+        
+
+        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#准备工作"><span class="toc-number">2.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Favicon-小图标"><span class="toc-number">3.</span> <span class="toc-text">Favicon 小图标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#导航栏顶部"><span class="toc-number">4.</span> <span class="toc-text">导航栏顶部</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#logo和搜索栏"><span class="toc-number">5.</span> <span class="toc-text">logo和搜索栏</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#rgba-和hsla"><span class="toc-number">5.1.</span> <span class="toc-text">rgba()和hsla()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">6.</span> <span class="toc-text">总结</span></a></li></ol>
+        
+    </div>
+</aside>
+
+</header>
+
+        <div id="content" class="content"><article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            Css练习-B站头部仿写
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/2019/06/17/Css练习-B站头部仿写/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-06-17T02:24:35.000Z" itemprop="datePublished">2019-06-17</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/Css/">Css</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​        最近好不容易学习完JavaScript，但是感觉自己的html和css生疏了很多，所以仿写B站的头部练习一下。废话不多说，让我们直接开始仿写的准备工作吧。</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>​        首先，来分析一下B站头部的布局,由图中红线可以看出，我给头部的划分，<a id="more"></a><del>不过通过分析源码和原页面布局我发现我和b站程序员大佬的划分还是有一定差别的</del>,既然划分完部分接下来就是写代码的过程了。</p>
+<p><img src="http://39.106.112.168/image/b%E7%AB%99%E5%A4%B4%E9%83%A8%E5%88%86%E5%9D%97.png" alt></p>
+<p>​        新建工程，并按照上面的划分，进行布局：</p>
+<p><img src="http://39.106.112.168/image/%E4%BB%A3%E7%A0%81.png" alt></p>
+<p>​        同时，观察可以发现，B站的头部中使用了部分字体图标，因为没有找到B站使用的，所以在这里我使用了<a href="http://fontawesome.dashgame.com/" target="_blank" rel="noopener">Font Awesome</a>的字体图标，关于引入图标，直接使用<link>标签就可以了。如下：</p>
+<p><img src="http://39.106.112.168/image/%E5%BC%95%E5%85%A5%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87.png" alt></p>
+<p>​        因为没有引入b站使用的基本样式，所以，开始写Css时，需要先清除一些浏览器默认的样式(这里我写的比较简略)：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">ul</span>&#123;</span><br><span class="line">    <span class="attribute">list-style</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">li</span>,<span class="selector-tag">a</span>&#123;</span><br><span class="line">    <span class="attribute">text-decoration</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.w</span>&#123; <span class="comment">/* 设置版心 */</span></span><br><span class="line">    <span class="attribute">width</span>: <span class="number">1160px</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0px</span> auto;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​    这段代码清除了浏览器自带的一些样式，同时，清除了ul列表前面的黑点和<li>、<a>标签中文本的下划线。</a></li></p>
+<p>同时，设置一个公共的class，方便进行版心设置。</p>
+<h2 id="Favicon-小图标"><a href="#Favicon-小图标" class="headerlink" title="Favicon 小图标"></a>Favicon 小图标</h2><p>​        所谓 Favicon 小图标其实可以理解为<strong>网站头像</strong>，位置如下图:</p>
+<p>​        <img src="http://39.106.112.168/image/%E5%A4%B4%E9%83%A8%E5%B0%8F%E5%9B%BE%E6%A0%87.png" alt></p>
+<p>大多数网站的Favicon 图标都可以通过直接在网站的顶级域名外加上“/<a href="https://baike.baidu.com/item/favicon.ico" target="_blank" rel="noopener">favicon.ico</a>”即可看到。例如：</p>
+<p>B站的Favicon图标可以通过访问<a href="https://www.bilibili.com/favicon.ico" target="_blank" rel="noopener">https://www.bilibili.com/favicon.ico</a>获取到。</p>
+<p>我们把<code>favicon.ico</code>图片放到工程文件的根目录，通过下面这种方式进行加载：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"shortcut icon"</span> <span class="attr">href</span>=<span class="string">"favicon.ico"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>注意，<code>shortcut icon</code>是Favicon的专有名词，不能改成别的单词。</p>
+<h2 id="导航栏顶部"><a href="#导航栏顶部" class="headerlink" title="导航栏顶部"></a>导航栏顶部</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 导航栏开始 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"nav"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"nav-body w"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"nav-l"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"image/favicon.ico"</span>&gt;</span> 主站<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>音频<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>游戏中心<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>直播<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>会员购<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>漫画<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>BW<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>70年<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-mobile"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span> 下载APP<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"nav-r"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"up-load"</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span></span><br><span class="line">                            投稿</span><br><span class="line">                        <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>历史<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>稍后再看<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>动态<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>消息<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>收藏<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>大会员<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span>&gt;</span>src="./image/avatar.jpg" alt=""&gt;<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">                    </span><br><span class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"image/favicon.ico"</span>&gt;</span> 主站<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>其中，这里的img其实应该是字体图标的，但是因为没找到对应的图标文件，我直接使用了获取到的Favicon图标。写好html，接下来开始使用Css美化。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">header</span>&#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">280px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(./image/background.png);</span><br><span class="line">    <span class="attribute">background-position</span>: center -<span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.nav</span>&#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">46px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(255,255,255,0.6);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.nav-l</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span>&#123;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">8px</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">12px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.nav-l</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span> <span class="selector-tag">i</span>&#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#19adde</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.nav-l</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span> <span class="selector-tag">img</span>&#123;</span><br><span class="line">    <span class="comment">/* 这里的图标本来应该是字体图标，而不是图片 */</span></span><br><span class="line">    <span class="attribute">width</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.nav-r</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span>&#123;</span><br><span class="line">    <span class="attribute">float</span>: right;</span><br><span class="line">    <span class="attribute">right</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">8px</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">12px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.nav-r</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span> <span class="selector-tag">img</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">32px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">32px</span>;</span><br><span class="line">    <span class="attribute">padding-top</span>: <span class="number">5px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.up-load</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">68px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">margin-left</span>: <span class="number">8px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#f45a8d</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">5px</span> <span class="number">5px</span>;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">float</span>: right;</span><br><span class="line">    <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">42px</span>;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.up-load</span> <span class="selector-tag">a</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.up-load</span><span class="selector-pseudo">:hover</span>&#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(244, 90, 141,0.9);</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line"><span class="selector-class">.nav-l</span>,<span class="selector-class">.nav-r</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span><span class="selector-pseudo">:hover</span>&#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(255,255,255,0.7);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里其实有一个小问题，B站的导航栏顶部背景是高斯模糊设置而成的，但是，对于filter: blur() 这个属性的使用我个人还是有些没弄明白，所以这里先留一个小坑。</p>
+<p>同时，我对于导航栏顶部的背景处理是使用了：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">background-color</span>: <span class="selector-tag">rgba</span>(255,255,255,0<span class="selector-class">.6</span>);</span><br></pre></td></tr></table></figure>
+
+<p>通过，对白色背景进行透明度的处理，从而达到类似的效果(<del>其实还是差不少的</del>)。</p>
+<p>其中关于背景图片的获取，可以通过鼠标右键在对应图片位置点击右键&gt;检查来找到对应标签位置，同时，找到对应的style=“background：”属性中的url，直接访问url地址即可发现图片。</p>
+<h2 id="logo和搜索栏"><a href="#logo和搜索栏" class="headerlink" title="logo和搜索栏"></a>logo和搜索栏</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- logo和搜索部分 --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"head-center w"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"logo"</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"./image/logo.png"</span> &gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"search"</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"#"</span>&gt;</span></span><br><span class="line">                  <span class="tag">&lt;<span class="name">button</span>&gt;</span><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-search"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">                  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">placeholder</span>=<span class="string">"二倍速浏览CJ"</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-bar-chart-o"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span>排行榜<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>关于<a href="http://fontawesome.dashgame.com/" target="_blank" rel="noopener">Font Awesome</a>字体图标库的使用，可以在它的官网找到想要用的图标名称，引入图标字体库后，直接在<i></i></p>
+<p>标签里设置class =“fa  fa-<strong>想使用图标的名字</strong>” 即可(<strong>在想使用图标的名字前一定要加fa</strong>)。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* logo和搜索开始 */</span></span><br><span class="line"><span class="selector-class">.head-center</span>&#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">125px</span>;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.logo</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">220px</span>;</span><br><span class="line">    <span class="attribute">margin-left</span>: <span class="number">25px</span>;</span><br><span class="line">    <span class="attribute">margin-top</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.search</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">272px</span>;</span><br><span class="line">    <span class="comment">/*272px = 48px(button宽度) + 12px*2(input的左右padding) + 200px(input宽度)*/</span></span><br><span class="line">    <span class="attribute">height</span>: <span class="number">32px</span>;</span><br><span class="line">    <span class="attribute">bottom</span>:<span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">right</span>: <span class="number">0px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">2px</span> <span class="number">2px</span> <span class="number">2px</span> <span class="number">72px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(0,0,0,.12);</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ccc</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">4px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.search</span> <span class="selector-tag">form</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">32px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">4px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">hsla</span>(0,0%,100%,.88);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.search</span> <span class="selector-tag">form</span> <span class="selector-tag">button</span>&#123;</span><br><span class="line">    <span class="attribute">float</span>: right;</span><br><span class="line">    <span class="attribute">top</span>:<span class="number">0</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">32px</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">48px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: transparent;</span><br><span class="line">    <span class="attribute">border</span>:<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.search</span> <span class="selector-tag">form</span> <span class="selector-tag">button</span> <span class="selector-tag">i</span>&#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#19adde</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.search</span> <span class="selector-tag">form</span> <span class="selector-tag">input</span>&#123;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">32px</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">32px</span>;</span><br><span class="line">    <span class="attribute">outline-style</span>: none;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">12px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: transparent;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">0px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">4px</span>;</span><br><span class="line">&#125; </span><br><span class="line"><span class="selector-class">.search</span>  <span class="selector-tag">a</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">2px</span>;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">2px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">32px</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">32px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">hsla</span>(0,0%,100%,.88);</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">12px</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#ff4e8e</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">4px</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">68px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.search</span> <span class="selector-tag">a</span> <span class="selector-tag">i</span>&#123;</span><br><span class="line">   <span class="attribute">color</span>:  <span class="number">#ff4e8e</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="rgba-和hsla"><a href="#rgba-和hsla" class="headerlink" title="rgba()和hsla()"></a>rgba()和hsla()</h3><p>RGBA指的是“红色、绿色、蓝色和Alpha透明度”(Red-Green-Blue-Alpha)</p>
+<p>HSLA则代表“色调、饱和度、亮度和Alpha透明度”(Hue-Saturation-Lightness-Alpha)</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>通过这次练习，我发现自己的CSS基础还是有些差，同时，对于一些新特性了解欠缺。对于一些属性的使用还是比较生疏，应该加强练习，我应该通过练习来加深对于学习的知识的印象。</p>
+<p>PS：仿写效果可以访问<a href="http://39.106.112.168/bili仿写/" target="_blank" rel="noopener">我的项目展示</a>来查看</p>
+
+        
+    </section>
+</article>
+
+
+
+</div>
+        <footer class="footer">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme by <a href="https://github.com/sanonz/hexo-theme-concise" target="_blank">Concise</a>
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?e4027971a230b210f4671f485b33846a";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    
+</footer>
+
+    </main>
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var nodes = {
+            nav: $('#nav'),
+            aside: $('#aside'),
+            asideInner: $('#aside-inner'),
+            navInner: $('#nav-inner')
+        };
+
+        var doing = false;
+        nodes.asideInner.on('webkitAnimationEnd mozAnimationEnd oAnimationEnd oanimationend animationend', function() {
+            if (nodes.aside.hasClass('mobile-open')) {
+                nodes.aside.removeClass('mobile-open');
+            } else {
+                nodes.aside.removeClass('mobile-close panel-show');
+            }
+            doing = false;
+        });
+        $('#open-panel, #aside-mask').on('click', function() {
+            if (doing) {
+                return;
+            }
+            
+            if (nodes.aside.hasClass('panel-show')) {
+                nodes.aside.addClass('mobile-close');
+            } else {
+                nodes.aside.addClass('mobile-open panel-show');
+            }
+        });
+        $('#open-menus').on('click', function() {
+            nodes.navInner.slideToggle();
+        });
+
+        if (window.innerWidth <= 960) {
+            setTimeout(function() {
+                nodes.navInner.slideUp();
+            }, 3000);
+        }
+    });
+    </script>
+    
+        <script type="text/javascript" src="/js/scrollspy.min.js"></script>
+        <script type="text/javascript">
+        $(document.body).scrollspy({target: '#aside-inner'});
+        </script>
+    
+
+</body>
+</html>
