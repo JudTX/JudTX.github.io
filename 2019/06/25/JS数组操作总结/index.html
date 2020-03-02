@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+
+    
+
+    
+
+    <title>JS数组操作总结 | Tx的博客</title>
+    <meta name="author" content="T x">
+    <meta name="version" content="1.0.0">
+    <meta name="keywords" content>
+    <meta name="description" content="数组基本操作concat()​    concat() 方法用于连接两个或多个数组，该方法属于深拷贝，不会改变现有的数组，仅会返回连接数组的复制。基本用法1234let arr = [1,2,3]let arr1 = [4,5,6]let arr2 = arr.concat(arr1) // 连接arr1和arr2console.log(arr2) //[1,2,3,4,5,6]对于数组深拷贝12345let arr1 = [1,2,3]let arr2 = arr1.conca...">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+
+    
+    <link rel="alternate" href="/atom.xml" title="Tx的博客" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/images/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <main class="app">
+        <header class="header clearfix">
+    <div id="nav" class="nav">
+    <div class="nav-mobile">
+        <button id="open-panel" class="open-panel nav-mobile-item"><i class="icon-documents"></i></button>
+        <h1 class="nav-mobile-title nav-mobile-item">Tx的博客</h1>
+        <button id="open-menus" class="open-panel nav-mobile-item"><i class="icon-library"></i></button>
+    </div>
+
+    <nav id="nav-inner" class="nav-inner">
+        
+            <a class="nav-item" href="/">
+                <span class="nav-text">首页</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/front-end">
+                <span class="nav-text">前端</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/algorithm">
+                <span class="nav-text">算法</span>
+            </a>
+        
+            <a class="nav-item" href="/tags">
+                <span class="nav-text">标签</span>
+            </a>
+        
+            <a class="nav-item" href="/archives">
+                <span class="nav-text">归档</span>
+            </a>
+        
+            <a class="nav-item" href="/about">
+                <span class="nav-text">关于</span>
+            </a>
+        
+    </nav>
+</div>
+
+    <aside id="aside" class="aside">
+    <div id="aside-mask" class="aside-mask"></div>
+    <div id="aside-inner" class="aside-inner">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"><i class="icon-search-stroke"></i></button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+
+        
+        
+        
+        
+
+        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#数组基本操作"><span class="toc-number">1.</span> <span class="toc-text">数组基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#concat"><span class="toc-number">1.1.</span> <span class="toc-text">concat()</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本用法"><span class="toc-number">1.1.1.</span> <span class="toc-text">基本用法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对于数组深拷贝"><span class="toc-number">1.1.2.</span> <span class="toc-text">对于数组深拷贝</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#push"><span class="toc-number">1.2.</span> <span class="toc-text">push()</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本用法-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">基本用法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pop"><span class="toc-number">1.3.</span> <span class="toc-text">pop()</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本方法"><span class="toc-number">1.3.1.</span> <span class="toc-text">基本方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#shift"><span class="toc-number">1.4.</span> <span class="toc-text">shift()</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本用法-2"><span class="toc-number">1.4.1.</span> <span class="toc-text">基本用法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#unshift"><span class="toc-number">1.5.</span> <span class="toc-text">unshift()</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本用法-3"><span class="toc-number">1.5.1.</span> <span class="toc-text">基本用法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#slice"><span class="toc-number">1.6.</span> <span class="toc-text">slice()</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本用法-4"><span class="toc-number">1.6.1.</span> <span class="toc-text">基本用法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#splice"><span class="toc-number">1.7.</span> <span class="toc-text">splice()</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本用法-5"><span class="toc-number">1.7.1.</span> <span class="toc-text">基本用法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#join"><span class="toc-number">1.8.</span> <span class="toc-text">join()</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本用法-6"><span class="toc-number">1.8.1.</span> <span class="toc-text">基本用法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sort"><span class="toc-number">1.9.</span> <span class="toc-text">sort()</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本用法-7"><span class="toc-number">1.9.1.</span> <span class="toc-text">基本用法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ES6新增方法"><span class="toc-number">2.</span> <span class="toc-text">ES6新增方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#forEach"><span class="toc-number">2.1.</span> <span class="toc-text">forEach()</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本用法-8"><span class="toc-number">2.1.1.</span> <span class="toc-text">基本用法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#map"><span class="toc-number">2.2.</span> <span class="toc-text">map()</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本用法-9"><span class="toc-number">2.2.1.</span> <span class="toc-text">基本用法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#filter"><span class="toc-number">2.3.</span> <span class="toc-text">filter()</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本用法-10"><span class="toc-number">2.3.1.</span> <span class="toc-text">基本用法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#every"><span class="toc-number">2.4.</span> <span class="toc-text">every()</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本用法-11"><span class="toc-number">2.4.1.</span> <span class="toc-text">基本用法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#some"><span class="toc-number">2.5.</span> <span class="toc-text">some()</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本用法-12"><span class="toc-number">2.5.1.</span> <span class="toc-text">基本用法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reduce"><span class="toc-number">2.6.</span> <span class="toc-text">reduce()</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本用法-13"><span class="toc-number">2.6.1.</span> <span class="toc-text">基本用法</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+</header>
+
+        <div id="content" class="content"><article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            JS数组操作总结
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/2019/06/25/JS数组操作总结/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-06-25T07:08:33.000Z" itemprop="datePublished">2019-06-25</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/JavaScript/">JavaScript</a>, <a class="article-tag-link" href="/tags/学习笔记/">学习笔记</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h2 id="数组基本操作"><a href="#数组基本操作" class="headerlink" title="数组基本操作"></a>数组基本操作</h2><h3 id="concat"><a href="#concat" class="headerlink" title="concat()"></a>concat()</h3><p>​    concat() 方法用于连接两个或多个数组，该方法属于深拷贝，不会改变现有的数组，仅会返回连接数组的复制。</p>
+<h4 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">let</span> arr1 = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line"><span class="keyword">let</span> arr2 = arr.concat(arr1) <span class="comment">// 连接arr1和arr2</span></span><br><span class="line"><span class="built_in">console</span>.log(arr2) <span class="comment">//[1,2,3,4,5,6]</span></span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h4 id="对于数组深拷贝"><a href="#对于数组深拷贝" class="headerlink" title="对于数组深拷贝"></a>对于数组深拷贝</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">let</span> arr2 = arr1.concat()</span><br><span class="line">arr1[<span class="number">1</span>] = <span class="number">4</span></span><br><span class="line"><span class="built_in">console</span>.log(arr1) <span class="comment">//[1,4,3]</span></span><br><span class="line"><span class="built_in">console</span>.log(arr2) <span class="comment">//[1,2,3]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="push"><a href="#push" class="headerlink" title="push()"></a>push()</h3><p>push() 方法可向数组的末尾添加一个或多个元素，并返回新的长度。末尾添加，返回的是长度，会改变原数组。</p>
+<h4 id="基本用法-1"><a href="#基本用法-1" class="headerlink" title="基本用法"></a>基本用法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">let</span> re = arr.push(<span class="number">8</span>) <span class="comment">//push方法还可以一次添加多个</span></span><br><span class="line"><span class="built_in">console</span>.log(arr) <span class="comment">//[1,2,3,8]</span></span><br><span class="line"><span class="built_in">console</span>.log(re) <span class="comment">//4</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="pop"><a href="#pop" class="headerlink" title="pop()"></a>pop()</h3><p>与push()方法相反，用于删除并返回数组的最后一个元素。返回最后一个元素，会改变原数组。</p>
+<h4 id="基本方法"><a href="#基本方法" class="headerlink" title="基本方法"></a>基本方法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">let</span> re = arr.pop()</span><br><span class="line"><span class="built_in">console</span>.log(arr) <span class="comment">//[1,2]</span></span><br><span class="line"><span class="built_in">console</span>.log(re) <span class="comment">//2</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="shift"><a href="#shift" class="headerlink" title="shift()"></a>shift()</h3><p>与pop()方法类似，用于把数组的第一个元素从其中删除，并返回第一个元素的值。返回第一个元素，改变原数组。</p>
+<h4 id="基本用法-2"><a href="#基本用法-2" class="headerlink" title="基本用法"></a>基本用法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">let</span> re = arr.shift()</span><br><span class="line"><span class="built_in">console</span>.log(arr) <span class="comment">//[2,3]</span></span><br><span class="line"><span class="built_in">console</span>.log(re) <span class="comment">//1</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="unshift"><a href="#unshift" class="headerlink" title="unshift()"></a>unshift()</h3><p>与push() 方法类似，可向数组的开头添加一个或更多元素，并返回新的长度。返回新长度，改变原数组。</p>
+<h4 id="基本用法-3"><a href="#基本用法-3" class="headerlink" title="基本用法"></a>基本用法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="built_in">console</span>.log(arr.unshift(<span class="number">4</span>,<span class="number">5</span>)) <span class="comment">//5 新数组长度</span></span><br><span class="line"><span class="built_in">console</span>.log(arr) <span class="comment">//[4,5,1,2,3]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="slice"><a href="#slice" class="headerlink" title="slice()"></a>slice()</h3><p>​    返回一个新的数组，包含从 start 到 end （不包括该元素）的arrayObject 中的元素。返回选定的元素，该方法不会修改原数组。</p>
+<h4 id="基本用法-4"><a href="#基本用法-4" class="headerlink" title="基本用法"></a>基本用法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="built_in">console</span>.log(arr.slice(<span class="number">0</span>,<span class="number">2</span>)) <span class="comment">//[1,2] 从第0个元素开始，截止到第一个元素</span></span><br><span class="line"><span class="built_in">console</span>.log(arr) <span class="comment">//[1,2,3]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="splice"><a href="#splice" class="headerlink" title="splice()"></a>splice()</h3><p>​    splice() 方法可删除从 index 处开始的零个或多个元素，并且用参数列表中声明的一个或多个值来替换那些被删除的元素。如果从 arrayObject 中删除了元素，则返回的是含有被删除的元素的数组。splice() 方法会直接对数组进行修改。</p>
+<h4 id="基本用法-5"><a href="#基本用法-5" class="headerlink" title="基本用法"></a>基本用法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line"><span class="built_in">console</span>.log(arr.splice(<span class="number">1</span>,<span class="number">0</span>,<span class="number">5</span>)) <span class="comment">//[]</span></span><br><span class="line"><span class="built_in">console</span>.log(arr) <span class="comment">//[1,5,2,3,4]</span></span><br><span class="line"><span class="built_in">console</span>.log(arr.splice(<span class="number">1</span>,<span class="number">2</span>)) <span class="comment">//[5,2]</span></span><br><span class="line"><span class="built_in">console</span>.log(arr) <span class="comment">//[1,3,4]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="join"><a href="#join" class="headerlink" title="join()"></a>join()</h3><p>​    join() 方法用于把数组中的所有元素放入一个字符串。元素是通过指定的分隔符进行分隔的，默认使用’,’号分割，不改变原数组。</p>
+<h4 id="基本用法-6"><a href="#基本用法-6" class="headerlink" title="基本用法"></a>基本用法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="built_in">console</span>.log(arr.join()) <span class="comment">//1,2,3</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="sort"><a href="#sort" class="headerlink" title="sort()"></a>sort()</h3><p>sort() 方法用于对数组的元素进行排序。</p>
+<h4 id="基本用法-7"><a href="#基本用法-7" class="headerlink" title="基本用法"></a>基本用法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">10</span>]</span><br><span class="line"><span class="built_in">console</span>.log(arr.sort()) <span class="comment">//[1,10,2,3] 并不会按大小排序，会按照首位排序</span></span><br><span class="line"><span class="comment">//若要按大小排序可用：</span></span><br><span class="line"><span class="built_in">console</span>.log(arr.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a - b;</span><br><span class="line">&#125;)) <span class="comment">//[1,2,3,10]</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="ES6新增方法"><a href="#ES6新增方法" class="headerlink" title="ES6新增方法"></a>ES6新增方法</h2><h3 id="forEach"><a href="#forEach" class="headerlink" title="forEach()"></a>forEach()</h3><p>​    forEach()会遍历数组, 循环体内没有返回值,forEach()循环不会改变原来数组的内容, forEach()有三个参数, 第一个参数是当前元素, 第二个参数是当前元素的索引, 第三个参数是当前元素所属的数组.</p>
+<h4 id="基本用法-8"><a href="#基本用法-8" class="headerlink" title="基本用法"></a>基本用法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">arr.forEach(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(item) <span class="comment">//1 2 3 4</span></span><br><span class="line">&#125;)<span class="comment">// 注意：不论forEach()对应函数中是否有return 都会循环完整个数组</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="map"><a href="#map" class="headerlink" title="map()"></a>map()</h3><p>​    map() 方法创建一个新数组，其结果是该数组中的每个元素都调用一个提供的函数后返回的结果。</p>
+<h4 id="基本用法-9"><a href="#基本用法-9" class="headerlink" title="基本用法"></a>基本用法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> array = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> ,<span class="number">5</span>];</span><br><span class="line"><span class="keyword">let</span> temp = array.map(<span class="function">(<span class="params">item, index, arr</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> item + <span class="number">1</span>;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(temp); <span class="comment">//[2,3,4,5,6]</span></span><br><span class="line"><span class="built_in">console</span>.log(array);<span class="comment">//[1,2,3,4,5]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="filter"><a href="#filter" class="headerlink" title="filter()"></a>filter()</h3><p>​    filter() 方法创建一个新的数组，新数组中的元素是通过检查指定数组中符合条件的所有元素。</p>
+<p>​    <strong>注意：</strong> filter() 不会对空数组进行检测。</p>
+<p>​    <strong>注意：</strong> filter() 不会改变原始数组。</p>
+<h4 id="基本用法-10"><a href="#基本用法-10" class="headerlink" title="基本用法"></a>基本用法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> array = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">let</span> temp = array.filter(<span class="function">(<span class="params">item, index, arr</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> item &gt; <span class="number">3</span>;    </span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(temp); <span class="comment">//[4,5]</span></span><br><span class="line"><span class="built_in">console</span>.log(array);<span class="comment">// [1,2,3,4,5]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="every"><a href="#every" class="headerlink" title="every()"></a>every()</h3><p>​    every() 方法用于检测数组所有元素是否都符合指定条件（通过函数提供）。</p>
+<p>every() 方法使用指定函数检测数组中的所有元素：</p>
+<ul>
+<li>如果数组中检测到有一个元素不满足，则整个表达式返回 <em>false</em> ，且剩余的元素不会再进行检测。</li>
+<li>如果所有元素都满足条件，则返回 true。</li>
+</ul>
+<p><strong>注意：</strong> every() 不会对空数组进行检测。</p>
+<p><strong>注意：</strong> every() 不会改变原始数组。</p>
+<h4 id="基本用法-11"><a href="#基本用法-11" class="headerlink" title="基本用法"></a>基本用法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> array = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">let</span> bo = array.every(<span class="function">(<span class="params">item, index, arr</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> item &gt; <span class="number">2</span>;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(bo);<span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="some"><a href="#some" class="headerlink" title="some()"></a>some()</h3><p>​    some()与every()类似，遍历数组的每一项, 然后根据循环体内的条件去判断, 只要有一个是<code>true</code>, 就会停止循环.</p>
+<h4 id="基本用法-12"><a href="#基本用法-12" class="headerlink" title="基本用法"></a>基本用法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> array = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line">array.some(<span class="function">(<span class="params">item, index, arr</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(item);<span class="comment">// 1 2 3 4</span></span><br><span class="line">    <span class="keyword">return</span> item &gt; <span class="number">3</span>;</span><br><span class="line">&#125;);<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="reduce"><a href="#reduce" class="headerlink" title="reduce()"></a>reduce()</h3><p>​    <code>reduce()</code>接收的那个函数就是回调函数, 回调函数调用数组里的每一个元素, 直到循环结束.</p>
+<p>​    <code>reduce()</code>跟其他几个方法不一样, 它有4个参数, 按顺序分别是 上一次的值, 当前的值, 当前值的索引, 数组.</p>
+<h4 id="基本用法-13"><a href="#基本用法-13" class="headerlink" title="基本用法"></a>基本用法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> array = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">let</span> total = array.reduce(<span class="function">(<span class="params">a, b</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(total);     <span class="comment">// 15</span></span><br></pre></td></tr></table></figure>
+
+
+        
+    </section>
+</article>
+
+
+
+</div>
+        <footer class="footer">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme by <a href="https://github.com/sanonz/hexo-theme-concise" target="_blank">Concise</a>
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?e4027971a230b210f4671f485b33846a";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    
+</footer>
+
+    </main>
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var nodes = {
+            nav: $('#nav'),
+            aside: $('#aside'),
+            asideInner: $('#aside-inner'),
+            navInner: $('#nav-inner')
+        };
+
+        var doing = false;
+        nodes.asideInner.on('webkitAnimationEnd mozAnimationEnd oAnimationEnd oanimationend animationend', function() {
+            if (nodes.aside.hasClass('mobile-open')) {
+                nodes.aside.removeClass('mobile-open');
+            } else {
+                nodes.aside.removeClass('mobile-close panel-show');
+            }
+            doing = false;
+        });
+        $('#open-panel, #aside-mask').on('click', function() {
+            if (doing) {
+                return;
+            }
+            
+            if (nodes.aside.hasClass('panel-show')) {
+                nodes.aside.addClass('mobile-close');
+            } else {
+                nodes.aside.addClass('mobile-open panel-show');
+            }
+        });
+        $('#open-menus').on('click', function() {
+            nodes.navInner.slideToggle();
+        });
+
+        if (window.innerWidth <= 960) {
+            setTimeout(function() {
+                nodes.navInner.slideUp();
+            }, 3000);
+        }
+    });
+    </script>
+    
+        <script type="text/javascript" src="/js/scrollspy.min.js"></script>
+        <script type="text/javascript">
+        $(document.body).scrollspy({target: '#aside-inner'});
+        </script>
+    
+
+</body>
+</html>
